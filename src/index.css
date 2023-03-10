@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+   @apply text-base;
+   background-color: #0a0a0a;
+   color: aliceblue;
+}
+
+::-webkit-scrollbar {
+   background-color: transparent;
+   width: 8px;
+}
+::-webkit-scrollbar-thumb {
+   background-color: lightskyblue;
+}

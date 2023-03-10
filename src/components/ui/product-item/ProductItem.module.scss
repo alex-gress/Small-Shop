@@ -1,0 +1,13 @@
+.product {
+   img {
+      @apply border border-solid mb-4;
+   }
+   
+   > .heading {
+      @apply text-xl uppercase mb-4 font-semibold
+   }
+
+   >.price  {
+      @apply text-lg;
+   }
+}
