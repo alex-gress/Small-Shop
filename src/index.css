@@ -3,9 +3,7 @@
 @tailwind utilities;
 
 body {
-   @apply text-base;
-   background-color: #0a0a0a;
-   color: aliceblue;
+   @apply text-base  overflow-x-hidden;
 }
 
 ::-webkit-scrollbar {
@@ -13,5 +11,9 @@ body {
    width: 8px;
 }
 ::-webkit-scrollbar-thumb {
-   background-color: lightskyblue;
+   @apply bg-slate-600
+}
+
+::selection {
+   @apply bg-slate-600 text-white
 }

@@ -1,0 +1,26 @@
+.intro {
+   @apply relative flex justify-start items-center;
+
+   &__image {
+      @apply relative w-full flex;
+      img {
+         @apply h-96 w-full  rounded-xl;
+      }
+      span {
+         @apply block w-full h-96 absolute opacity-30 bg-slate-50 z-10  rounded-xl;
+         content: "";
+
+      }
+   }
+   &__item {
+      @apply absolute max-w-lg p-2 ml-10 z-10;
+
+      h2 {
+         @apply text-lg text-4xl font-bold mb-2;
+      }
+      p {
+         @apply text-lg text-xl ;
+      }
+
+   }
+}

@@ -4,43 +4,36 @@ import { ProductService } from '../../services/product.service';
 import { useQuery } from 'react-query';
 import axios  from 'axios';
 import ProductItem from '../../components/ui/product-item/ProductItem';
+import Layout from './../../components/Layout/Layout'
+import {AiOutlineArrowRight} from 'react-icons/ai'
+import Intro from '../../components/Intro/Intro';
 
 const Home:FC = () => { 
-   const {data: products, isLoading } = useQuery('products', () => ProductService.getProducts(), {
+   const count = 9
+   const {data: products, isLoading } = useQuery(['products', count], () => ProductService.getProducts(count), {
       select: ({data}) => data.products
    }
    )
 
-   // const [products, setProducts] = useState<any[]>([])
-   // const [data, setData] = useState<any[]>([])
-   // const [error, setError] = useState<string>('')
-   // const [isLoading, setIsLoading] = useState<boolean>(false)
-
-   // useEffect(() => {
-   //    ProductService.getProducts()
-   //       .then((res:any) => {
-   //          setProducts(res.data.products); 
-   //          setData(res.data);
-   //       })
-   //       .catch((err:any) => console.error(err))
-   //       .finally(() => setIsLoading(true))
-   // }, [])
-
   return (
-   <h1 className={styles.bg}>
-      {/* {error && <div className='bg-red-400 text-gray-900 p-2 mb-2 font-bold rounded-xl shadow-lg' >{error}</div>} */}
+   <Layout title=''>
+      <Intro/>
+      <div className={styles.section}>
+         <h2>Shop</h2>
+         <a href="/shop" className={styles.icon}><AiOutlineArrowRight/></a>
+      </div>
       {!isLoading? (
          <>
             {products? (
-               <div className=''>
+               <div className={styles.products}>
                   {products.map((product,index) => 
                      <ProductItem  key={index} product={product}/>  
                   )}
                </div>
             ): (<>Products Not Found</>)}
          </>
-      ): (<div className="text-blue-500">Loadding...</div>)} 
-   </h1>
+      ): (<div className="text-orange-500">Loadding...</div>)} 
+   </Layout>
   )
 }
 

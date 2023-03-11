@@ -1,0 +1,16 @@
+.product {
+   @apply  max-w-4xl mb-24;
+   &__desc {
+      @apply mb-2;
+      span {
+         @apply mr-2
+      }
+   }
+   &__pay {
+      @apply flex justify-start items-center gap-4;
+
+      span {
+         @apply font-bold;
+      }
+   }
+}

@@ -1,0 +1,28 @@
+.gallery {
+   @apply flex justify-between items-start mb-3;
+
+   &__image {
+      @apply w-full relative flex justify-center items-center;
+      img {
+         @apply p-1 rounded-xl h-96 object-cover ;
+      }
+
+      .gallery__menu {
+         @apply absolute bottom-0 flex justify-between items-center bg-white w-full p-2 rounded-xl shadow-lg ;
+         .gallery__navigation {
+            @apply flex justify-between items-center gap-2; 
+
+            .icon {
+               @apply font-bold text-lg hover:text-gray-600 transition-all ease-in delay-100 cursor-pointer;
+            }
+         }
+      }
+   }
+
+   &__collection {
+
+      img {
+         @apply object-cover w-full h-20 p-2 rounded-xl relative hover:shadow-lg transition-all ease-in delay-100 cursor-pointer;
+      }
+   }
+}

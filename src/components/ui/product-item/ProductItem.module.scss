@@ -1,13 +1,21 @@
 .product {
-   img {
-      @apply border border-solid mb-4;
-   }
-   
-   > .heading {
-      @apply text-xl uppercase mb-4 font-semibold
-   }
+   @apply  rounded-xl transition ease-in delay-100 shadow-lg hover:shadow-xl;
+   border: 1px solid lightgray;
 
-   >.price  {
-      @apply text-lg;
+   img {
+      @apply h-40 rounded-xl w-full object-cover transition ease-in-out delay-75 ;
+      filter: brightness(90%);
+
+   }
+   .product__item {
+      @apply flex w-full justify-between items-center flex-wrap p-2;
+      
+      > .heading {
+         @apply text-xl text-gray-800 uppercase font-semibold font-mono mr-1 text-base transition ease-in delay-100;
+      }
+
+      >.price  {
+         @apply text-lg font-mono  p-1 rounded-xl ;
+      }
    }
 }
